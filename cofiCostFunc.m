@@ -48,7 +48,8 @@ Theta_grad = ((X * Theta' - Y) .* R)' * X;
 
 %regularized prarams
 
-J += (1/ 2) * lambda * sum(sum(Theta .^ 2));
+J += (1/ 2) * lambda * sum(sum(Theta .^ 2)); 	%regularization for Theta
+J += (1/ 2) * lambda * sum(sum(X .^ 2));		%regularization for X
 
 X_grad += (lambda * X);
 Theta_grad += (lambda * Theta);
